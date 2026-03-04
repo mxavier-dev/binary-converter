@@ -41,7 +41,7 @@ pip install customtkinter
 
 1 - Clone the repository:
 ```bash
-git clone https://github.com/yourusername/binary-decimal-converter.git
+git clone https://github.com/mxavier-dev/binary-decimal-converter
 ```
 
 2 - Navigate to the project directory:
