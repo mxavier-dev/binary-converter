@@ -2,6 +2,11 @@
 
 A simple and intuitive **Binary ↔ Decimal Converter** built with Python and `customtkinter`. This application allows users to convert binary numbers to decimal and vice versa, with a clean and user-friendly interface.
 
+## 🔧 Technologies
+
+- Python 3.x
+- customtkinter
+
 ## 🚀 Features
 
 - **Binary to Decimal Conversion**: Enter a binary number and get its decimal equivalent.
