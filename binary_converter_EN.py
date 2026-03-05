@@ -35,7 +35,7 @@ def is_decimal(text):
 def binary_to_decimal():
     """Convert the value from `binary_entry` to decimal and update `result_label`.
 
-    Algorithm: parse bits, reverse (LSB first) and sum bit * 2**index.
+    Algorithm: parse bits, reverse (LSB first) and sum bit * 2 ** index.
     """
     binary = entry1.get()
     if binary == '':
@@ -59,7 +59,6 @@ def decimal_to_binary():
             return
         binarys = []
         while decimal != 0:
-            # determina o bit atual (0 ou 1) e reduz o valor pela divisão inteira
             if str(decimal / 2).endswith('0'):
                 binarys.append(0)
                 decimal //= 2
@@ -74,13 +73,13 @@ def decimal_to_binary():
         result_label2.configure(text='Please, \ninsert a valid decimal number.')
 
 
-# --- Configuração da interface ---
+# --- Interface configuration ---
 window = ctk.CTk()
 ctk.set_appearance_mode('dark')
 window.geometry('360x360')
 window.title('Binary Calculator')
 
-# registra validadores para os Entry widgets (usados por validatecommand)
+# Registers validators for Entry widgets (used by validatecommand)
 vcmd_binary = (window.register(is_binary), '%P')
 vcmd_decimal = (window.register(is_decimal), '%P')
 
@@ -91,21 +90,21 @@ tab.pack()
 tab.add('Binary → Decimal')
 tab.add('Decimal → Binary')
 
-# Aba: Binary → Decimal
+# Tab: Binary → Decimal
 ctk.CTkLabel(tab.tab('Binary → Decimal'), text='Write a binary number', font=('arial', 18, 'bold')).pack(pady=10)
 entry1 = ctk.CTkEntry(tab.tab('Binary → Decimal'), font=('arial', 18, 'bold'), validate='key', validatecommand=vcmd_binary)
 entry1.pack(pady=10)
-botao = ctk.CTkButton(tab.tab('Binary → Decimal'), font=('arial', 18, 'bold'), text='Convert', command=binary_to_decimal)
-botao.pack(pady=10)
+button = ctk.CTkButton(tab.tab('Binary → Decimal'), font=('arial', 18, 'bold'), text='Convert', command=binary_to_decimal)
+button.pack(pady=10)
 result_label = ctk.CTkLabel(tab.tab('Binary → Decimal'), text='', font=('arial', 22, 'bold'))
 result_label.pack()
 
-# Aba: Decimal → Binary
+# Tab: Decimal → Binary
 ctk.CTkLabel(tab.tab('Decimal → Binary'), text='Write a decimal number', font=('arial', 18, 'bold')).pack(pady=10)
 entry2 = ctk.CTkEntry(tab.tab('Decimal → Binary'), font=('arial', 18, 'bold'), validate='key', validatecommand=vcmd_decimal)
 entry2.pack(pady=10)
-botao = ctk.CTkButton(tab.tab('Decimal → Binary'), font=('arial', 18, 'bold'), text='Convert', command=decimal_to_binary)
-botao.pack(pady=10)
+button2 = ctk.CTkButton(tab.tab('Decimal → Binary'), font=('arial', 18, 'bold'), text='Convert', command=decimal_to_binary)
+button2.pack(pady=10)
 result_label2 = ctk.CTkLabel(tab.tab('Decimal → Binary'), text='', font=('arial', 22, 'bold'))
 result_label2.pack()
 
