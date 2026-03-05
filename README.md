@@ -46,7 +46,7 @@ git clone https://github.com/mxavier-dev/binary-decimal-converter
 
 2 - Navigate to the project directory:
 ```bash
-cd binary-converter
+cd binary-decimal-converter
 ```
 
 3 - Run the application:
